@@ -1,5 +1,8 @@
 package com.zrt.score.controller;
 
+import com.zrt.score.domain.ScoreDomain;
+import com.zrt.score.repository.ScoreRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -7,9 +10,19 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class ScoreController {
 
-    @GetMapping(value="/index")
-    public String index(@RequestParam(value = "name",required = false,defaultValue = "未命名") String name)
+    @Autowired
+    private ScoreRepository scoreRepository;
+    //添加学生成绩
+    @GetMapping(value="/create/score")
+    public ScoreDomain create_score(ScoreDomain scoreDomain)
     {
-        return "你的姓名为："+name;
+        ScoreDomain s=new ScoreDomain();
+        s.setStuNo(scoreDomain.getStuNo());
+        s.setStuName(scoreDomain.getStuName());
+        s.setStuClass(scoreDomain.getStuClass());
+        s.setStuType(scoreDomain.getStuType());
+        s.setStuScore(scoreDomain.getStuScore());
+        scoreRepository.save(s);
+        return s;
     }
 }
