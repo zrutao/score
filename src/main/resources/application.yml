@@ -1,7 +1,7 @@
-string:
+spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://zhaorutao.xyz:3306/student?characterEncoding=UTF-8
+    url: jdbc:mysql://zhaorutao.xyz:3306/student?useUnicode=true&characterEncoding=UTF-8
     username: root
     password: zhao0662
   jpa:

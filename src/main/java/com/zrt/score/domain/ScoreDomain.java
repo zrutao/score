@@ -2,6 +2,8 @@ package com.zrt.score.domain;
 
 
 
+import com.zrt.score.enums.ResultEnum;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -22,8 +24,8 @@ public class ScoreDomain {
     @NotNull
     private String stuType;
     @NotNull
-    @Min(value = 0,message = "成绩不能小于0")
-    @Max(value = 100,message = "成绩不能大于100")
+    @Min(value = 2,message = "成绩不能小于0")
+    @Max(value = 3,message = "成绩不能大于100")
     private String stuScore;
 
     public Integer getStuNo() {
