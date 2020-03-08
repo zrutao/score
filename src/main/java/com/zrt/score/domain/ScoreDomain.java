@@ -24,9 +24,9 @@ public class ScoreDomain {
     @NotNull
     private String stuType;
     @NotNull
-    @Min(value = 2,message = "成绩不能小于0")
-    @Max(value = 3,message = "成绩不能大于100")
-    private String stuScore;
+    @Min(value = 0,message = "成绩不能小于0")
+    @Max(value = 100,message = "成绩不能大于100")
+    private Integer stuScore;
 
     public Integer getStuNo() {
         return stuNo;
@@ -60,14 +60,15 @@ public class ScoreDomain {
         this.stuType = stuType;
     }
 
-    public String getStuScore() {
+    public Integer getStuScore() {
         return stuScore;
     }
 
-    public void setStuScore(String stuScore) {
+    public void setStuScore(Integer stuScore) {
         this.stuScore = stuScore;
     }
 
     public ScoreDomain() {
     }
+
 }

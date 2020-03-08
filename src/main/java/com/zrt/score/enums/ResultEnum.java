@@ -4,7 +4,8 @@ public enum ResultEnum {
 
     UNKONW_ERROR(0, "未知错误"),
     SUCCESS(1, "成功"),
-
+    MORE(2,"成绩不能大于100"),
+    LESS(3,"成绩不能小于0"),
     ;
 
     private Integer code;

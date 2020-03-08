@@ -17,11 +17,11 @@ public class ScoreUtils {
         resultDomain.setData(scoreDomain);
         return resultDomain;
     }
-    public static ResultDomain<ScoreDomain> failed(BindingResult bindingResult)
+    public static ResultDomain<ScoreDomain> failed(String message,Integer code)
     {
         ResultDomain resultDomain=new ResultDomain();
-        resultDomain.setCode(0);
-        resultDomain.setMessage(bindingResult.getFieldError().getDefaultMessage());
+        resultDomain.setCode(code);
+        resultDomain.setMessage(message);
         return resultDomain;
     }
 
